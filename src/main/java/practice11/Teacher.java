@@ -15,6 +15,17 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, List<Klass> classes) {
         super(id, name, age);
         this.classes = new ArrayList<>(classes);
+        for (Klass klass : this.classes) {
+            klass.appendTeacher(this);
+        }
+    }
+
+    void handleStudentJoin(Student student, Klass klass) {
+        System.out.println("I am " + this.getName() +". I know " + student.getName() +" has joined " + klass.getDisplayName() + ".");
+    }
+
+    void handleLeaderChange(Student leader, Klass klass) {
+        System.out.println("I am " + this.getName() +". I know " + leader.getName() +" become Leader of " + klass.getDisplayName() + ".");
     }
 
     public List<Klass> getClasses() {

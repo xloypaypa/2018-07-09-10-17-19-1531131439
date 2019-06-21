@@ -8,17 +8,20 @@ public class Klass {
 
     private final int number;
     private final Set<Student> member;
+    private final Set<Teacher> teachers;
 
     private Student leader;
 
     private Klass() {
         this.number = 0;
         this.member = new HashSet<>();
+        this.teachers = new HashSet<>();
     }
 
     public Klass(int number) {
         this.number = number;
         this.member = new HashSet<>();
+        this.teachers = new HashSet<>();
     }
 
     public int getNumber() {
@@ -45,6 +48,9 @@ public class Klass {
     public void assignLeader(Student student) {
         if (this.member.contains(student)) {
             this.leader = student;
+            for (Teacher teacher : this.teachers) {
+                teacher.handleLeaderChange(student, this);
+            }
         } else {
             System.out.println("It is not one of us.");
         }
@@ -56,6 +62,13 @@ public class Klass {
 
     public void appendMember(Student student) {
         this.member.add(student);
+        for (Teacher teacher : this.teachers) {
+            teacher.handleStudentJoin(student, this);
+        }
+    }
+
+    void appendTeacher(Teacher teacher) {
+        this.teachers.add(teacher);
     }
 
     public boolean containsMember(Student student) {
