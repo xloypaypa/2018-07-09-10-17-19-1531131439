@@ -7,6 +7,6 @@ public class Worker extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce() + " I am a Worker. I have a job.";
+        return "My name is " + this.getName() + ". I am " + this.getAge() + " years old. I am a Worker. I have a job.";
     }
 }
