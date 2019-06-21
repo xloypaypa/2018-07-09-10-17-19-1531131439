@@ -18,7 +18,7 @@ public class Klass {
 
     private final int number;
 
-    private Person leader;
+    private Student leader;
 
     private Klass() {
         this.number = 0;
@@ -49,11 +49,11 @@ public class Klass {
         return Objects.hash(number);
     }
 
-    public void assignLeader(Person person) {
-        this.leader = person;
+    public void assignLeader(Student student) {
+        this.leader = student;
     }
 
-    public Person getLeader() {
+    public Student getLeader() {
         return leader;
     }
 }
