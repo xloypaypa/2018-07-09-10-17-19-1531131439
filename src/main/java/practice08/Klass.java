@@ -18,6 +18,8 @@ public class Klass {
 
     private final int number;
 
+    private Person leader;
+
     private Klass() {
         this.number = 0;
     }
@@ -45,5 +47,13 @@ public class Klass {
     @Override
     public int hashCode() {
         return Objects.hash(number);
+    }
+
+    public void assignLeader(Person person) {
+        this.leader = person;
+    }
+
+    public Person getLeader() {
+        return leader;
     }
 }
