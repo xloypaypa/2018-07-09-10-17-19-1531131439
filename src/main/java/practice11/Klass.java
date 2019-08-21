@@ -52,7 +52,7 @@ public class Klass {
                 teacher.handleLeaderChange(student, this);
             }
         } else {
-            System.out.println("It is not one of us.");
+            System.out.println("It is not one of us！");
         }
     }
 
