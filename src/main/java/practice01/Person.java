@@ -18,6 +18,10 @@ public class Person {
 		return this.age;
 	}
 	
+	public String introduce() {
+		return "My name is " + this.name + ". I am " + this.age + " years old.";
+	}
+	
 	
 	
 }
